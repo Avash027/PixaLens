@@ -1,10 +1,13 @@
 import { TextField } from "@material-ui/core";
 import React, { useState } from "react";
 import { Button } from "@material-ui/core";
+import MicIcon from "@material-ui/icons/Mic";
 import Display from "./util/Display";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
+import Appbar from "./util/Appbar";
+import { MicOff } from "@material-ui/icons";
 
 const App = (props) => {
   const [imageList, updateImageList] = useState([]);
@@ -45,6 +48,9 @@ const App = (props) => {
 
   return (
     <div className="App" align="center">
+      <Appbar />
+      <br></br>
+      <br></br>
       <form className="mainForm" noValidate autoComplete="off">
         <TextField
           id="standard-basic"
@@ -61,10 +67,20 @@ const App = (props) => {
         </Button>
         <br></br>
         <br></br>
-        <Button variant="contained" color="primary" onClick={textToImageStart}>
+        <Button
+          variant="contained"
+          color="primary"
+          startIcon={<MicIcon />}
+          onClick={textToImageStart}
+        >
           Start Talking
         </Button>
-        <Button variant="contained" color="secondary" onClick={textToImageStop}>
+        <Button
+          variant="contained"
+          color="secondary"
+          startIcon={<MicOff />}
+          onClick={textToImageStop}
+        >
           Stop Talking
         </Button>
         <br></br>
