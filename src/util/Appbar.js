@@ -34,7 +34,7 @@ export default function Appbar() {
     if (id === "0")
       window.open("https://linkedin.com/in/avash-mitra-4548761a6/");
     else if (id === "1") window.open("https://github.com/Avash027/PixaLens");
-    else window.open("https://github.com/Avash027");
+    else if (id === "3") window.open("https://github.com/Avash027");
     setAnchorEl(null);
   };
 
